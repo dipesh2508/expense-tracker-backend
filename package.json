@@ -4,7 +4,8 @@
   "description": "backend for the final project of js course of the front-end frontier",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jasmine",
+    "test:watch": "nodemon --exec jasmine",
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
@@ -17,5 +18,9 @@
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.4.4"
+  },
+  "devDependencies": {
+    "jasmine": "^5.5.0",
+    "jasmine-spec-reporter": "^7.0.0"
   }
 }
