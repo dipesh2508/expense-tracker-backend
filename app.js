@@ -3,8 +3,10 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
 
-// Load environment variables
-dotenv.config();
+// Load environment variables based on NODE_ENV
+dotenv.config({
+  path: process.env.NODE_ENV === 'test' ? '.env.test' : '.env'
+});
 
 // Import routes
 const authRoutes = require('./routes/authRoutes');
@@ -29,3 +31,6 @@ app.use('/api/categories', categoryRoutes);
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+// Export for testing
+module.exports = app;

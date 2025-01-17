@@ -4,8 +4,8 @@
   "description": "backend for the final project of js course of the front-end frontier",
   "main": "app.js",
   "scripts": {
-    "test": "jasmine",
-    "test:watch": "nodemon --exec jasmine",
+    "test": "cross-env NODE_ENV=test jasmine",
+    "test:watch": "cross-env NODE_ENV=test nodemon --exec jasmine",
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
@@ -20,7 +20,9 @@
     "mongoose": "^8.4.4"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "jasmine": "^5.5.0",
-    "jasmine-spec-reporter": "^7.0.0"
+    "jasmine-spec-reporter": "^7.0.0",
+    "supertest": "^7.0.0"
   }
 }
